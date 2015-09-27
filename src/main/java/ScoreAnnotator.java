@@ -44,7 +44,7 @@ public class ScoreAnnotator extends JCasAnnotator_ImplBase {
     CosineSimScoring cosScoring = new CosineSimScoring();
     
     // read passages and put into a hahsmap according to their question id.
-    HashMap<String, ArrayList<TokennizedPassage> > questionPassages = new HashMap<>();
+    HashMap<String, ArrayList<TokennizedPassage> > questionPassages = new HashMap<String, ArrayList<TokennizedPassage> >();
     Iterator passageIter = passageIndex.iterator();
     while(passageIter.hasNext()){
       TokennizedPassage passage = (TokennizedPassage)passageIter.next();

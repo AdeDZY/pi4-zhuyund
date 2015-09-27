@@ -13,7 +13,7 @@ public class BooleanMatchScoring extends Scoring {
 
   @Override
   protected HashMap<String, Integer> getQuestionVec(TokennizedQuestion question) {
-    HashMap<String, Integer> questionVector = new HashMap<>();
+    HashMap<String, Integer> questionVector = new HashMap<String, Integer>();
     Collection<String> tokens = FSListFactory.createCollection(question.getTokens(), null);
     for (String token : tokens) {
       questionVector.put(token, 1);  // 0-1 vector
@@ -23,7 +23,7 @@ public class BooleanMatchScoring extends Scoring {
 
   @Override
   protected HashMap<String, Integer> getPassageVec(TokennizedPassage passage) {
-    HashMap<String, Integer> passageVector = new HashMap<>();
+    HashMap<String, Integer> passageVector = new HashMap<String, Integer>();
     Collection<String> passageTokens = FSListFactory.createCollection(passage.getTokens(), null);
     for (String token : passageTokens) {
       passageVector.put(token, 1); // 0-1 vector

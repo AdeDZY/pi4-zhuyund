@@ -13,7 +13,7 @@ public class CosineSimScoring extends Scoring {
 
   @Override
   protected HashMap<String, Integer> getQuestionVec(TokennizedQuestion question) {
-    HashMap<String, Integer> questionVector = new HashMap<>();
+    HashMap<String, Integer> questionVector = new HashMap<String, Integer>();
     Collection<String> tokens = FSListFactory.createCollection(question.getTokens(), null);
     for (String token : tokens) {
       if (questionVector.get(token) == null)
@@ -26,7 +26,7 @@ public class CosineSimScoring extends Scoring {
 
   @Override
   protected HashMap<String, Integer> getPassageVec(TokennizedPassage passage) {
-    HashMap<String, Integer> passageVector = new HashMap<>();
+    HashMap<String, Integer> passageVector = new HashMap<String, Integer>();
     Collection<String> passageTokens = FSListFactory.createCollection(passage.getTokens(), null);
     for (String token : passageTokens) {
       if (passageVector.get(token) == null)

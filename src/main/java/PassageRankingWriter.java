@@ -47,7 +47,7 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
     }
 
     // read all passages
-    ArrayList<Passage> passages = new ArrayList<>();
+    ArrayList<Passage> passages = new ArrayList<Passage>();
     FSIndex passageIndex = jcas.getAnnotationIndex(TokennizedPassage.type);
     Iterator passageIter = passageIndex.iterator();
     while (passageIter.hasNext()) {

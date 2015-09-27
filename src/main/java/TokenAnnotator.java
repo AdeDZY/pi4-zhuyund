@@ -90,7 +90,7 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
    * @return hashset<String>
    */
   private HashSet<String> readStopWords(String filePath) {
-    HashSet<String> stopWords = new HashSet<>();
+    HashSet<String> stopWords = new HashSet<String>();
     File stopFile = new File(filePath);
     try {
       BufferedReader reader = new BufferedReader(new FileReader(stopFile));
@@ -115,7 +115,7 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
    * @return ArrayList<String>
    */
   private ArrayList<String> removeStopWords(ArrayList<String> tokens) {
-    ArrayList<String> result = new ArrayList<>();
+    ArrayList<String> result = new ArrayList<String>();
     for (String token : tokens) {
       if (this.stopWords.contains(token))
         continue;
