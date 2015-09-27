@@ -25,7 +25,7 @@ import edu.stanford.nlp.process.PTBTokenizer.PTBTokenizerFactory;
 
 /***
  * Tokennize question and passages Write tokennized data into Passage and Questions
- * 
+ * Cast into lower case and removes Stop words
  * @author zhuyund
  *
  */
@@ -109,18 +109,15 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
 
   
   /***
-   * removes non-alphanumeric tokens and stop words
+   * removes stop words
    * 
    * @param tokens
    * @return ArrayList<String>
    */
   private ArrayList<String> removeStopWords(ArrayList<String> tokens) {
     ArrayList<String> result = new ArrayList<>();
-    Pattern p = Pattern.compile("[^a-zA-Z0-9]");
     for (String token : tokens) {
       if (this.stopWords.contains(token))
-        continue;
-      if (p.matcher(token).find())
         continue;
       result.add(token);
     }

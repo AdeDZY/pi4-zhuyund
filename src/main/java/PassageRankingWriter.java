@@ -56,12 +56,21 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
 
     // sort passages
     Collections.sort(passages, new PassageComparator());
-
+    
+    // evaluate P@N
+    System.out.println(this.getPrecision(passages));
+    
     // write to file
     this.writeToOutputFile(jcas, passages, this.outputFileName);
 
   }
 
+  /***
+   * Write the ranked list to file
+   * @param jcas
+   * @param sortedPassages
+   * @param fileName
+   */
   private void writeToOutputFile(JCas jcas, ArrayList<Passage> sortedPassages, String fileName) {
     // write to file
     File outFile = new File(this.mOutputDir, fileName);
@@ -77,5 +86,33 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
       e.printStackTrace();
     }
   }
+  
+  /***
+   * Evaluate the macro-average Precision@N
+   * @param sortedPassages
+   * @return macro-average Precision@N
+   */
+  private Double getPrecision(ArrayList<Passage> sortedPassages){
+    int i = 0, j;
+    double ap = 0.0;
+    int nQuestions = 0;
+    while(i < sortedPassages.size()){
+      String qid = sortedPassages.get(i).getQuestion().getId();
+      int n = 0, r = 0;
+      for(j = i;j < sortedPassages.size() && sortedPassages.get(j).getQuestion().getId().equals(qid); j++){
+        if(sortedPassages.get(j).getLabel())
+          n += 1;
+      }
+      for(int t = i;t < i + n; t++){
+        if(sortedPassages.get(t).getLabel())
+          r += 1;
+      }
+      if(n > 0)
+        ap += r/(double)n;
+      nQuestions += 1;
+      i = j;
+     }
+    return ap/nQuestions;
+  } 
 
 }

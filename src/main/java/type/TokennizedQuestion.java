@@ -12,8 +12,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 import org.apache.uima.jcas.cas.StringList;
 
 
-/** Tokenized Question annoatation. Extends type.Question. Additional feature: tokenizedText
- * Updated by JCasGen Sat Sep 26 18:54:31 EDT 2015
+/** Tokenized Question annoatation. Extends type.Question. Additional feature: tokens
+ * Updated by JCasGen Sun Sep 27 11:34:06 EDT 2015
  * XML source: /Users/zhuyund/Documents/workspace/pi4-zhuyund/src/main/resources/descriptors/typeSystem.xml
  * @generated */
 public class TokennizedQuestion extends Question {
@@ -81,7 +81,7 @@ public class TokennizedQuestion extends Question {
   //*--------------*
   //* Feature: tokens
 
-  /** getter for tokens - gets tonnized text. Tokens are joined by ' '
+  /** getter for tokens - gets A list of tokens
    * @generated
    * @return value of the feature 
    */
@@ -90,7 +90,7 @@ public class TokennizedQuestion extends Question {
       jcasType.jcas.throwFeatMissing("tokens", "type.TokennizedQuestion");
     return (StringList)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((TokennizedQuestion_Type)jcasType).casFeatCode_tokens)));}
     
-  /** setter for tokens - sets tonnized text. Tokens are joined by ' ' 
+  /** setter for tokens - sets A list of tokens 
    * @generated
    * @param v value to set into the feature 
    */

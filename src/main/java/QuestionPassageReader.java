@@ -45,7 +45,6 @@ public class QuestionPassageReader extends CollectionReader_ImplBase {
 
   @Override
   public void getNext(CAS aCAS) throws IOException, CollectionException {
-    System.out.println("lalalalala");
     JCas jcas;
     try {
       jcas = aCAS.getJCas();

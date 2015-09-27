@@ -12,8 +12,8 @@ import org.apache.uima.cas.Type;
 import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
-/** Tokenized Question annoatation. Extends type.Question. Additional feature: tokenizedText
- * Updated by JCasGen Sat Sep 26 18:54:31 EDT 2015
+/** Tokenized Question annoatation. Extends type.Question. Additional feature: tokens
+ * Updated by JCasGen Sun Sep 27 11:34:06 EDT 2015
  * @generated */
 public class TokennizedPassage_Type extends Passage_Type {
   /** @generated 

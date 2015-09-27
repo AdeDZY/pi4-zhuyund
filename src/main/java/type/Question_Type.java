@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Stores the information about a question.
- * Updated by JCasGen Sat Sep 26 18:54:31 EDT 2015
+ * Updated by JCasGen Sun Sep 27 11:34:06 EDT 2015
  * @generated */
 public class Question_Type extends ComponentAnnotation_Type {
   /** @generated 

@@ -11,7 +11,7 @@ public class Main {
    * This method is the main program and entry point of your system. It runs a Collection Processing
    * Engine (CPE).
    * 
-   * @param args
+   * @param args inputDir outputDir method (Boolean or Cosine). Third arg is optional. Defualt is "Boolean"
    */
   public static void main(String[] args) throws Exception {
     // ### A guideline for implementing this method ###
@@ -20,6 +20,9 @@ public class Main {
 
     String inputDir = args[0];
     String outputDir = args[1];
+    String method = "Boolean"; // method set default to boolean
+    if(args.length > 2 && args[2].equals("Cosine"))
+      method = args[2];
 
     // Instantiate CPE.
     CpeDescription cpeDesc = UIMAFramework.getXMLParser()
@@ -39,6 +42,11 @@ public class Main {
     AnalysisEngine cc = (AnalysisEngine) mCPE.getCasProcessors()[1];
     cc.setConfigParameterValue("OutputDir", outputDir);
     cc.reconfigure();
+    
+    // AAE
+    AnalysisEngine aae = (AnalysisEngine) mCPE.getCasProcessors()[0];
+    aae.setConfigParameterValue("METHOD", method);
+    aae.reconfigure();
 
     // Create and register a Status Callback Listener.
     mCPE.addStatusCallbackListener(new StatusCallbackListenerImpl());

@@ -16,8 +16,9 @@ import org.apache.uima.cas.Type;
 import type.ComponentAnnotation;
 
 /**
- * Bridges between FSList and java Collection
  * 
+ * A Factory Class that bridges between FSList and java Collection
+ * Uses Factory Pattern
  * @author zhuyund
  *
  */

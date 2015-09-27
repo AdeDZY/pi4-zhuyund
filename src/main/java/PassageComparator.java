@@ -2,8 +2,8 @@ import java.util.Comparator;
 import type.Passage;
 /**
  * A comparator for passages
- * Question Id in ascending order
- * Passage score in descending order
+ * Question Id in ascending order, passage score in descending order
+ * Uses Template Pattern
  * @author zhuyund
  *
  */

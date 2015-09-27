@@ -18,8 +18,26 @@
     <description>This is a template (empty) descriptor for your Aggerate Analysis Engine.  You will need to specify your type system and capabilities, in addition to your individual analysis engines.</description>
     <version>1.0</version>
     <vendor/>
-    <configurationParameters searchStrategy="language_fallback"/>
-    <configurationParameterSettings/>
+    <configurationParameters searchStrategy="language_fallback">
+      <configurationParameter>
+        <name>METHOD</name>
+        <description>the method used for scoring: Boolean or Cosine</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+        <overrides>
+          <parameter>ScoreAnnotatorDescriptor/METHOD</parameter>
+        </overrides>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>METHOD</name>
+        <value>
+          <string>Boolean</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
     <flowConstraints>
       <fixedFlow>
         <node>TestElementAnnotatorDescriptor</node>
