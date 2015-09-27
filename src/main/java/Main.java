@@ -18,13 +18,12 @@ public class Main {
     // This code gives you a template for a CPE. Still, you need to configure each individual
     // component.
 
-    // Edit the following code to get the input and output directories from a command line.
-    String inputDir = null;
-    String outputDir = null;
+    String inputDir = args[0];
+    String outputDir = args[1];
 
     // Instantiate CPE.
     CpeDescription cpeDesc = UIMAFramework.getXMLParser()
-            .parseCpeDescription(new XMLInputSource("src/main/resources/cpeDescriptor.xml"));
+            .parseCpeDescription(new XMLInputSource("src/main/resources/descriptors/cpeDescriptor.xml"));
     CollectionProcessingEngine mCPE = UIMAFramework.produceCollectionProcessingEngine(cpeDesc);
 
     // Configure your collection reader with the given input directory. The code below assumes that
@@ -32,8 +31,6 @@ public class Main {
     CollectionReader cr = (CollectionReader) mCPE.getCollectionReader();
     cr.setConfigParameterValue("InputDir", inputDir);
     cr.reconfigure();
-
-    // Configure your aggregate analysis engine here, if you want to.
 
     // Configure your CAS consumer with the given output directory. The code below assumes that the
     // CAS consumer has a parameter 'OutputDir' to specify the output directory. The code below

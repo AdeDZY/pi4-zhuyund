@@ -19,16 +19,22 @@
       <nameValuePair>
         <name>OutputDir</name>
         <value>
-          <string>Y</string>
+          <string>src/main/resources/outputData</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
-    <typeSystemDescription/>
+    <typeSystemDescription>
+      <imports>
+        <import location="typeSystem.xml"/>
+      </imports>
+    </typeSystemDescription>
     <typePriorities/>
     <fsIndexCollection/>
     <capabilities>
       <capability>
-        <inputs/>
+        <inputs>
+          <type allAnnotatorFeatures="true">type.TokennizedPassage</type>
+        </inputs>
         <outputs/>
         <languagesSupported/>
       </capability>

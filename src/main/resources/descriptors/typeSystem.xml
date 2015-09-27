@@ -92,5 +92,29 @@ You need to implement the types requried for your ranking model.</description>
         </featureDescription>
       </features>
     </typeDescription>
-    </types>
+    <typeDescription>
+      <name>type.TokennizedQuestion</name>
+      <description>Tokenized Question annoatation. Extends type.Question. Additional feature: tokenizedText</description>
+      <supertypeName>type.Question</supertypeName>
+      <features>
+        <featureDescription>
+          <name>tokens</name>
+          <description>tonnized text. Tokens are joined by ' '</description>
+          <rangeTypeName>uima.cas.StringList</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.TokennizedPassage</name>
+      <description>Tokenized Question annoatation. Extends type.Question. Additional feature: tokenizedText</description>
+      <supertypeName>type.Passage</supertypeName>
+      <features>
+        <featureDescription>
+          <name>tokens</name>
+          <description/>
+          <rangeTypeName>uima.cas.StringList</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
 </typeSystemDescription>
